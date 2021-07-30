@@ -24,6 +24,11 @@ function Layout({ pageTitle, children }) {
             About
           </Link>
         </li>
+        <li className={navLinkItem}>
+          <Link to="/image" className={navLinkText}>
+            Image
+          </Link>
+        </li>
       </nav>
       <h1 className={title}>{pageTitle}</h1>
       {children}
