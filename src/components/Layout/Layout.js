@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 
 import {
   title,
@@ -11,6 +11,20 @@ import {
 } from "./Layout.module.css";
 
 function Layout({ pageTitle, children }) {
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      allFile {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+    }
+  `);
+
+  console.log(data);
+
   return (
     <main className={container}>
       <nav className={navLinks}>
@@ -27,6 +41,11 @@ function Layout({ pageTitle, children }) {
         <li className={navLinkItem}>
           <Link to="/image" className={navLinkText}>
             Image
+          </Link>
+        </li>
+        <li className={navLinkItem}>
+          <Link to="/blog" className={navLinkText}>
+            Blog
           </Link>
         </li>
       </nav>
