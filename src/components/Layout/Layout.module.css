@@ -1,0 +1,24 @@
+.title {
+  color: rebeccapurple;
+  font-size: 3rem;
+}
+
+.container {
+  margin: auto;
+  max-width: 500px;
+  font-family: sans-serif;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.navLinkItem {
+  padding-right: 2rem;
+}
+
+.navLinkText {
+  color: black;
+}
