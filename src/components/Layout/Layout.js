@@ -4,6 +4,7 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 
 import {
   title,
+  siteTitle,
   container,
   navLinks,
   navLinkItem,
@@ -13,20 +14,17 @@ import {
 function Layout({ pageTitle, children }) {
   const data = useStaticQuery(graphql`
     query MyQuery {
-      allFile {
-        edges {
-          node {
-            name
-          }
+      site {
+        siteMetadata {
+          title
         }
       }
     }
   `);
 
-  console.log(data);
-
   return (
     <main className={container}>
+      <h1 className={siteTitle}>{data.site.siteMetadata.title}</h1>
       <nav className={navLinks}>
         <li className={navLinkItem}>
           <Link to="/" className={navLinkText}>
